@@ -45,7 +45,7 @@ optuna=3.6.1
 
 ### Model Training
 
-- Scripts/trainingCICDDoS2019.py 
+- Scripts/trainingcicddos2019.py 
 - Scripts/trainingCICIoMT2024.py 
 
   - Train the HybridQGAN model using the benign training and validation sets.
@@ -70,7 +70,7 @@ optuna=3.6.1
 
 ## Experiments
 - Saved models and results are stored in the following folder:
-  - qgan_CICIoMT2024 and qganCICDDoS2019 folder contains:
+  - qgan_CICIoMT2024 and qgan_CICDDoS2019 folder contains:
     - checkpointModels folder with saved HQGAN models
     - IDScores folder with intrusion detection scores and inference times.
     - Results folder with model results plots
