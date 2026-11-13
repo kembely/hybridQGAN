@@ -183,7 +183,7 @@ def preprocessData(training=True, save=True):
     df_BENIGN = []
     benign_chunks = []
     attack_chunks = {cat_id: [] for cat_id in range(1, 8)}
-    for i in range(len(Files_List)-3):
+    for i in range(len(Files_List)):
         filePath = path + folder_name + Files_List[i]
         df = pd.read_csv(filePath, sep=",")
         df = clean_numerical_records(df) 
