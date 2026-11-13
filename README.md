@@ -1,9 +1,9 @@
 # Hybrid QGAN
 
-[![Dataset: CICDDoS2019](https://www.unb.ca/cic/datasets/ddos-2019.html)]
-[![Dataset: CICIoMT2024](https://www.unb.ca/cic/datasets/iomt-dataset-2024.html)]
+[[Dataset: CICDDoS2019](https://www.unb.ca/cic/datasets/ddos-2019.html)]
+[[Dataset: CICIoMT2024](https://www.unb.ca/cic/datasets/iomt-dataset-2024.html)]
 
-Code of the research paper **"Unsupervised Hybrid Quantum-Classical Generative Adversarial Network-Based Intrusion Detection System for 6G-enabled Internet of Things"** by Ivette Kembely Carrera Manosalvas, Paulo Freitas de Araujo-Filho, Georges Kaddoum, and Hadi Otrok. This paper was published in IEEE TNSM : https://ieeexplore.ieee.org/document/11780743 
+Code for the research paper **"Unsupervised Hybrid Quantum-Classical Generative Adversarial Network-Based Intrusion Detection System for 6G-enabled Internet of Things"** by Ivette Kembely Carrera Manosalvas, Paulo Freitas de Araujo-Filho, Georges Kaddoum, and Hadi Otrok. This paper was published in IEEE TNSM: https://ieeexplore.ieee.org/document/11780743 
 
 This repository provides the experimental pipeline, including preprocessing the CICDDoS2019 and CICIoMT2024 datasets, unsupervised adversarial training, and attack detection evaluation.
 
@@ -27,46 +27,46 @@ optuna=3.6.1
 
 ### Dataset Preprocessing
 
-Scripts/dataPreparation_CICDDoS2019.py
-Scripts/dataPreparation_CICIoMT2024.py
+- Scripts/dataPreparation_CICDDoS2019.py
+- Scripts/dataPreparation_CICIoMT2024.py
 
-- Loads and cleans dataset files
-- Creates and saves training, validation, and testing sets as numpy tensors (`trainingSet_40features.npy`, `validationSet_40features.npy`, and `testingSet_40features.npy).
+  - Loads and cleans dataset files
+  - Creates and saves training, validation, and testing sets as numpy tensors (`trainingSet_40features.npy`, `validationSet_40features.npy`, and `testingSet_40features.npy).
 
-Scripts/datasetClasses_IoT.py
+- Scripts/datasetClasses_IoT.py
 
-- Normalizes and prepares data loaders for using datasets,
+  - Normalizes and prepares data loaders for using datasets,
 
 ### Model Definition
 
-Scripts/qganModel.py
+- Scripts/qganModel.py
 
-- Defines the hybrid generator and classical discriminator architectures.
+  - Defines the hybrid generator and classical discriminator architectures.
 
 ### Model Training
 
-Scripts/trainingCICDDoS2019.py 
-Scripts/trainingCICDDoS2024.py 
+- Scripts/trainingCICDDoS2019.py 
+- Scripts/trainingCICIoMT2024.py 
 
-- Train the HybridQGAN model using the benign training and validation sets.
+  - Train the HybridQGAN model using the benign training and validation sets.
 
 ### Evaluation & Metrics
 
-Scripts/qidsCICDDoS2019.py
-Scripts/qidsCICIoMT2024.py 
+- Scripts/qidsCICDDoS2019.py
+- Scripts/qidsCICIoMT2024.py 
 
-- Evaluate the trained discriminator checkpoint against the testing sets.
-- Compute detection performance metrics such as accuracy, precision, recall, F1, and AUC-ROC scores and plot ROC curves (`.png` and `.pdf`).
+  - Evaluate the trained discriminator checkpoint against the testing sets.
+  - Compute detection performance metrics such as accuracy, precision, recall, F1, and AUC-ROC scores and plot ROC curves (`.png` and `.pdf`).
 
-Scripts/qualityMetrics.py
+- Scripts/qualityMetrics.py
 
-- Evaluate JSD, WSD, and TSTR metrics 
+  - Evaluate JSD, WSD, and TSTR metrics 
 
 ### Others 
 
-Script/utilFunctions.py
+- Script/utilFunctions.py
 
-- Auxiliary functions used in the project
+  - Auxiliary functions used in the project
 
 ## Experiments
 - Saved models and results are stored in the following folder:
