@@ -81,7 +81,7 @@ class HQIDS():
         
         print("Testing and Saving Disc. Scores ........ Finished.")
         evaluateDetectionPerformance(all_labels, all_categories, all_dScores, self.pathSaveResults, 200, "CICIoMT2024") # EER evaluation
-        #computeDetectionRates(labelsList2, categoriesList2, loss_D_list2, self.pathSaveADResults, 200, "CICIoMT2024","Y") #Youden's Index evaluation
+        #evaluateDetectionPerformance(all_labels, all_categories, all_dScores, self.pathSaveResults, 200, "CICIoMT2024", "Y") # Youden's Index evaluation
 
         detectionTimes_mean, detectionTimes_std = computeLatencyStats(all_detectionTimes)
         print(f'Detection Times Mean: {detectionTimes_mean:.6f} s ')
